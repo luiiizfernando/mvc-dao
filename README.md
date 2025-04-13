@@ -1,34 +1,43 @@
 # Northwind Orders App
 
 ## Descrição
-Este projeto tem como objetivo implementar uma aplicação para inserção de pedidos no banco de dados **Northwind** utilizando Python, com foco em segurança (SQL Injection) e mapeamento objeto-relacional (ORM). A aplicação segue o padrão de arquitetura **MVC** e **DAO**, com duas formas de conexão ao banco de dados: **psycopg2** e **SQLAlchemy**.
+Este projeto tem como objetivo implementar uma aplicação para inserção de pedidos no banco de dados **Northwind**, utilizando Python e os padrões de arquitetura **MVC** e **DAO**. O foco está na prática de segurança contra SQL Injection, uso de driver de conexão e mapeamento objeto-relacional com ORM (SQLAlchemy).
 
-### Funcionalidades
-- Inserção de pedidos no banco de dados.
-- Implementação de segurança com **SQL Injection**.
+> Atividade prática 2 da disciplina **SPAD02 - Banco de Dados 2**.
+
+## Funcionalidades
+- Inserção de pedidos no banco de dados de três formas:
+  - SQL Inseguro (com SQL Injection proposital)
+  - SQL Seguro (com parâmetros - `psycopg2`)
+  - ORM (usando SQLAlchemy)
+- Verificação e inserção automática de clientes e funcionários, se não existirem.
 - Relatórios:
-  - Detalhes de pedidos: número, data, nome do cliente, nome do vendedor, itens do pedido.
-  - Ranking dos funcionários: nome, total de pedidos, soma dos valores vendidos.
+  - 📄 **Detalhes de um pedido**: número, data, cliente, vendedor, itens com produto, quantidade e preço.
+  - 🏆 **Ranking de funcionários**: total de pedidos e valor vendido por período.
 
-### Tecnologias
-- Python
-- psycopg2 (driver de conexão com PostgreSQL)
-- SQLAlchemy (ORM)
-- Banco de dados PostgreSQL
+## Tecnologias Utilizadas
+- Python 3.12+
+- PostgreSQL
+- psycopg2
+- SQLAlchemy
+- Sqlacodegen (para gerar modelos)
+- Jupyter / Visual Studio Code (opcional para execução)
 
-### Como Rodar o Projeto
-1. Clone o repositório:
 
-git clone https://github.com/seu-usuario/northwind-orders-app.git
+## Como Executar
+1. **Clone o repositório**:
+```bash
+git clone https://github.com/luiiizfernando/mvc-dao.git
+cd mvc-dao
 
 2. Instale as dependências:
 
 pip install -r requirements.txt
 
-3. Execute o projeto:
+3. Configure a conexão com o banco no db_config.py: Preencha os dados da sua conexão PostgreSQL.
 
-Pode usar o play de executar arquivos do visual studio ou python main.py
+4. Execute a aplicação:
 
+python main.py
 
-
-
+Você também pode executar diretamente pelo Visual Studio Code ou outro editor de sua preferência.
